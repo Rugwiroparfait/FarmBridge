@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmBridge - Connect, Trade, and Grow Smarter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero_section_background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .green-gradient {
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+        }
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 30px;
+            height: 2px;
+            background: #4CAF50;
+            z-index: -1;
+        }
+        .step-card:last-child::before {
+            display: none;
+        }
+        .chat-bot-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .chat-bot-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Nav -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-green-600">Farm<span class="text-gray-800">Bridge</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-green-600 transition duration-300">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-green-600 transition duration-300">How It Works</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition duration-300">Testimonials</a>
+                <a href="#blog" class="text-gray-600 hover:text-green-600 transition duration-300">Blog</a>
+                <a href="#contact" class="text-gray-600 hover:text-green-600 transition duration-300">Contact</a>
+            </div>
+            <div class="hidden md:flex">
+                <a href="#" class="bg-transparent border border-green-600 text-green-600 px-4 py-2 rounded-lg mr-4 hover:bg-green-600 hover:text-white transition duration-300">Login</a>
+                <a href="#" class="green-gradient text-white px-4 py-2 rounded-lg hover:opacity-90 transition duration-300">Sign Up</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight animate__animated animate__fadeInDown">
+                Revolutionizing Agriculture:<br>Connect, Trade, and Grow Smarter!
+            </h1>
+            <p class="mt-4 text-xl text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">
+                Empowering farmers with AI-driven insights, seamless marketplace<br class="hidden md:block"> connections, and financial solutions for a thriving agribusiness.
+            </p>
+            <div class="mt-10 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#" class="green-gradient text-white font-semibold px-6 py-3 rounded-lg mr-4 hover:opacity-90 transition duration-300 shadow-lg">
+                    Get Started
+                </a>
+                <a href="#" class="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Join as a Farmer
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose FarmBridge?</h2>
+                <p class="mt-4 text-xl text-gray-600">Innovative solutions designed specifically for modern agriculture</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-500 hover:cursor-pointer border-t-4 border-green-500">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">AI-Powered Advisory</h3>
+                    <p class="mt-4 text-gray-600">Get real-time insights on weather, soil quality, and best farming practices for your specific needs.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-500 hover:cursor-pointer border-t-4 border-green-500">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-store text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Digital Marketplace</h3>
+                    <p class="mt-4 text-gray-600">Sell directly to buyers, eliminate middlemen, and get the best price for your produce.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-500 hover:cursor-pointer border-t-4 border-green-500">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wallet text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Financial Inclusion</h3>
+                    <p class="mt-4 text-gray-600">Access digital payments and credit scoring for better financial planning and growth.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-500 hover:cursor-pointer border-t-4 border-green-500">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Farm Analytics</h3>
+                    <p class="mt-4 text-gray-600">Track farm expenses, yield, and market trends with our intuitive dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">How It Works</h2>
+                <p class="mt-4 text-xl text-gray-600">Simple steps to transform your farming business</p>
+            </div>
+            
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-green-200 z-0 transform -translate-y-1/2"></div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="step-card relative z-10">
+                        <div class="bg-white rounded-xl shadow-md p-6 h-full flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">1</div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Sign Up</h3>
+                            <p class="text-gray-600 flex-grow">Register as a farmer or buyer in just a few simple steps</p>
+                            <img src="how_it_works_1.jpg" alt="Sign up illustration" class="mt-6 animate-float">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-card relative z-10">
+                        <div class="bg-white rounded-xl shadow-md p-6 h-full flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">2</div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">List or Browse Products</h3>
+                            <p class="text-gray-600 flex-grow">Upload farm produce or find suppliers with our easy-to-use interface</p>
+                            <img src="how_it_works_2.jpg" alt="Browse products illustration" class="mt-6 animate-float" style="animation-delay: 1s;">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-card relative z-10">
+                        <div class="bg-white rounded-xl shadow-md p-6 h-full flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">3</div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Get Insights & Connect</h3>
+                            <p class="text-gray-600 flex-grow">Use AI tools for better farm decisions and connect with potential partners</p>
+                            <img src="Get_insights.jpg" alt="AI insights illustration" class="mt-6 animate-float" style="animation-delay: 2s;">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="step-card relative z-10">
+                        <div class="bg-white rounded-xl shadow-md p-6 h-full flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">4</div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Trade Securely</h3>
+                            <p class="text-gray-600 flex-grow">Buy & sell directly with secure mobile payments and tracking</p>
+                            <img src="trade_securely.jpg" alt="Secure trading illustration" class="mt-6 animate-float" style="animation-delay: 3s;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Parallax -->
+    <section id="testimonials" class="py-20 bg-fixed bg-cover bg-center" style="background-image: url('/api/placeholder/1920/1080')">
+        <div class="bg-green-900 bg-opacity-80">
+            <div class="container mx-auto px-6 py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Success Stories</h2>
+                    <p class="mt-4 text-xl text-gray-200">Hear from farmers who transformed their business with FarmBridge</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card rounded-xl p-6 animate__animated animate__fadeInUp">
+                        <div class="flex items-center mb-4">
+                            <img src="Rugwiro.png" alt="Farmer portrait" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">John Mwangi</h4>
+                                <p class="text-green-600">Maize Farmer, Kenya</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Since joining FarmBridge, my profits have increased by 40%. The AI recommendations helped me improve my crop yield significantly."</p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card rounded-xl p-6 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="flex items-center mb-4">
+                            <img src="Rugwiro.png" alt="Farmer portrait" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Rukundo Samuel</h4>
+                                <p class="text-green-600">Coffee Grower, Rwanda</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"The marketplace feature allowed me to connect with international buyers directly. I now get fair prices for my premium coffee beans."</p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card rounded-xl p-6 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="flex items-center mb-4">
+                            <img src="Rugwiro.png" alt="Farmer portrait" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Mukunzi Isaac</h4>
+                                <p class="text-green-600">Vegetable Farmer, India</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"The financial tools helped me secure a loan for expanding my farm. The analytics dashboard makes tracking expenses so much easier."</p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partner Logos -->
+                <div class="mt-20">
+                    <h3 class="text-2xl font-semibold text-white text-center mb-10">Trusted By</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                        <img src="https://clipground.com/images/ur-logo-3.png" alt="ur-logo-3" class="h-12 mx-auto filter brightness-0 invert">
+                        <img src="FarmBridge.png" alt="Partner logo" class="h-12 mx-auto filter brightness-0 invert">
+                        <img src="FarmBridge.png" alt="Partner logo" class="h-12 mx-auto filter brightness-0 invert">
+                        <img src="FarmBridge.png" alt="Partner logo" class="h-12 mx-auto filter brightness-0 invert">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Latest Insights</h2>
+                <p class="mt-4 text-xl text-gray-600">Explore our latest articles on farming tips & industry trends</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+                    <img src="blogpost_image.png" alt="Blog post image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-semibold">AI in Agriculture</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2">How AI is Transforming Small-Scale Farming</h3>
+                        <p class="mt-3 text-gray-600 line-clamp-3">Discover how artificial intelligence is making precision agriculture accessible to small-scale farmers across the globe...</p>
+                        <a href="#" class="mt-4 inline-block text-green-600 font-semibold hover:text-green-700">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+                    <img src="blogpost_image2.png" alt="Blog post image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-semibold">Financial Tips</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2">5 Ways to Improve Your Farm's Financial Health</h3>
+                        <p class="mt-3 text-gray-600 line-clamp-3">Learn practical strategies for managing cash flow, reducing costs, and planning for long-term growth...</p>
+                        <a href="#" class="mt-4 inline-block text-green-600 font-semibold hover:text-green-700">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+                    <img src="how_it_works_1.jpg" alt="Blog post image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-semibold">Success Story</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2">From Local to Global: How One Farmer Expanded Their Market</h3>
+                        <p class="mt-3 text-gray-600 line-clamp-3">The inspiring journey of a small-scale farmer who used digital tools to reach international markets...</p>
+                        <a href="#" class="mt-4 inline-block text-green-600 font-semibold hover:text-green-700">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="green-gradient text-white px-6 py-3 rounded-lg hover:opacity-90 transition duration-300 inline-block">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Join thousands of farmers using smart technology</h2>
+                <p class="mt-4 text-xl text-gray-600">Transform your farming business with AI-powered insights and direct market access</p>
+                
+                <div class="mt-10 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
+                    <a href="#" class="green-gradient text-white font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition duration-300 shadow-lg">
+                        Sign Up for Free
+                    </a>
+                    <a href="#" class="bg-white text-green-600 border border-green-600 font-semibold px-8 py-4 rounded-lg hover:bg-green-50 transition duration-300 shadow-lg">
+                        Book a Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Farm<span class="text-green-400">Bridge</span></h3>
+                    <p class="text-gray-400 mb-4">Empowering farmers with technology for a sustainable future.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.instagram.com/__r.u.g.w.i.r.o__/" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/RugwiroParfait" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/__r.u.g.w.i.r.o__/" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/rugwiroparfait" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Our Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Farmer's Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">API Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Community Forum</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span>Musanze, Northern Province, Rwanda</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-green-400"></i>
+                            <span>rugwiroparfait003@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-green-400"></i>
+                            <span>+250788783057</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 FarmBridge. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Bot Icon -->
+    <div class="chat-bot-icon animate__animated animate__bounce">
+        <i class="fas fa-comments text-white text-2xl"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements =
+            elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const viewportHeight = window.innerHeight;
+
+            if (elementTop < viewportHeight && elementBottom > 0) {
+                element.classList.add('animate__fadeInUp');
+            } else {
+                element.classList.remove('animate__fadeInUp');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Chat bot interaction
+    document.querySelector('.chat-bot-icon').addEventListener('click', function() {
+        alert('Chat bot functionality coming soon!, iyi feature izaboneka vuba');
+    });
+
+    // Mobile menu toggle
+    document.querySelector('button.md:hidden').addEventListener('click', function() {
+        const nav = document.querySelector('.hidden.md\\:flex');
+        nav.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
